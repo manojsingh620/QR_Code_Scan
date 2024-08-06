@@ -14,6 +14,11 @@ const Register = () => {
   console.log("qrdata is ===", qrdata);
   const [qrcode, setQrcode] = useState("");
   const [data,setData]=useState("")
+  const [count, setCount] = useState(0);
+
+  const handleincriment = () => {
+    setCount(count + 1);
+  };
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
@@ -29,6 +34,7 @@ const Register = () => {
     setData(dataApi.data)
   }
 
+
   const generateqr=()=>{
      setUniqueid({uniqueId : v4()})
      
@@ -36,6 +42,7 @@ const Register = () => {
     const url = "  https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=";
     const originalqrcode = `${url}https://qr-code-scanner-frontend.vercel.app/${uniqueid.uniqueId}/verify`;
     setQrcode(originalqrcode)
+    handleincriment()
     console.log("url link with id =",originalqrcode)
   }
 
@@ -66,8 +73,10 @@ const Register = () => {
         {qrcode.length > 0 && (
           <div className="flex items-center justify-center mt-10">
             <img src={qrcode} alt="qrimage" className="" />
+            
           </div>
         )}
+        <div className=" mt-10 flex justify-center items-center text-xl font-bold">QR code ticket No = {count}</div>
       </div>
     </div>
   );
