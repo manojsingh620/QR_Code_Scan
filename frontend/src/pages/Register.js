@@ -34,7 +34,7 @@ const Register = () => {
      
     console.log("uniqueId is thwer ",uniqueid.uniqueId)
     const url = "  https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=";
-    const originalqrcode = `${url}http://localhost:3000/${uniqueid.uniqueId}/verify`;
+    const originalqrcode = `${url}https://qr-code-scanner-frontend.vercel.app/${uniqueid.uniqueId}/verify`;
     setQrcode(originalqrcode)
     console.log("url link with id =",originalqrcode)
   }
