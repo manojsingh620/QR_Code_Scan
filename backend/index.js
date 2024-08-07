@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: 'https://qr-code-scanner-frontend.vercel.app',
+    origin: 'https://qr-code-scanner-frontend.vercel.app/register',
     methods: ['GET,POST,OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
