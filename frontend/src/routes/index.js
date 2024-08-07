@@ -1,8 +1,8 @@
 import {createBrowserRouter} from "react-router-dom"
 import Register from "../pages/Register"
-import Scanner from "../pages/Scanner"
 import App from "../App"
 import Freshers from "../pages/Freshers"
+import Success from "../pages/Success"
 
 const router = createBrowserRouter([
     {
@@ -15,8 +15,18 @@ const router = createBrowserRouter([
             },
             {
                 path:"/:id/verify",
-                element:<Freshers/>
+                element:<Freshers/>,
+                // children: [
+                //     {
+                //         path:"success",
+                //         element:<Succes/>
+                //     }
+                // ]
             },
+            {
+                path:"success",
+                element:<Success/>
+            }
         ]
     },
 
