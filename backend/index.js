@@ -14,9 +14,8 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: 'https://qr-code-scanner-frontend.vercel.app',
-    methods: 'GET,POST,OPTIONS',
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: true,
+    methods: ['GET,POST,OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 app.use(express.urlencoded({ extended: true }));
