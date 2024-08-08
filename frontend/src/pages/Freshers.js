@@ -49,19 +49,21 @@ const Freshers = () => {
   };
 
   useEffect(() => {
+    toast.success("Very Welcome Freshers Batch 2023")
     Apidatafetch();
     // checkfunction();
   }, []);
   return (
-    <div className="h-screen container mx-auto bg-white ">
-      <div className="pt-2 ">
-        <div className="w-full mx-auto flex  flex-col justify-center items-center p-2 mt-10">
+    <div className="h-screen container mx-auto bg-white flex flex-col justify-center items-center">
+      <div className=" ">
+        <p className="font-serif text-center font-xl">Very Welcome Freshers Batch 2023</p>
+        <div className="w-full mx-auto flex  flex-col justify-center items-center p-2 ">
           <img src={HelloImg} alt="helloimghai"/>
         </div>
         <div className="flex justify-center items-center">
           <button
             onClick={checkfunction}
-            className="bg-blue-600 px-2 py-1 rounded-full text-white  mt-4  text-center"
+            className="hidden bg-blue-600 px-2 py-1 rounded-full text-white  mt-4  text-center"
           >
             verify ticket
           </button>
