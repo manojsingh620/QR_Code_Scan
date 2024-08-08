@@ -27,13 +27,14 @@ const Home = () => {
   
   return (
     <div className="h-screen bg-gradient-to-r from-blue-300 to-white container mx-auto">
-      <div className="max-w-md mx-auto pt-20">
+      <div className="max-w-md mx-auto pt-16">
         <div className="flex flex-col items-center justify-center m-3">
-          <p className="text-2xl font-serif text-red-600">Scan QR Code</p>
-          <button onClick={startScanning} className="p-2 bg-blue-600 text-white rounded-full">start scanning</button>
+          <p className="text-2xl font-serif text-red-600 m-1">Scan QR Code</p>
+          <button onClick={startScanning} className= "mb-2 p-2 bg-blue-600 text-white rounded-full">start scanning</button>
           {result ? (
-            <div>
-              Success : <a href={result}>{result}</a>
+            <div className="flex items-center justify-center">
+              <h1 className="text-start">Success:</h1>
+               <a href={result} className="text-blue-600 ">{result+"/success"}</a>
             </div>
           ) : (
             <div id="reader"></div>

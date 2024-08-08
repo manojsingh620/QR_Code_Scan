@@ -4,6 +4,7 @@ import App from "../App"
 import Freshers from "../pages/Freshers"
 import Success from "../pages/Success"
 import Home from "../pages/Home"
+import Cancel from "../pages/Cancel"
 
 const router = createBrowserRouter([
     {
@@ -19,18 +20,26 @@ const router = createBrowserRouter([
                 element:<Register/>
             },
             {
-                path:"/:id/verify",
+                path:":id/verify",
                 element:<Freshers/>,
                 // children: [
                 //     {
                 //         path:"success",
-                //         element:<Succes/>
+                //         element:<Success/>
+                //     },
+                //     {
+                //         path:"cancel",
+                //         element:<Cancel/>
                 //     }
                 // ]
             },
             {
                 path:"success",
                 element:<Success/>
+            },
+            {
+                path:"cancel",
+                element:<Cancel/>
             }
         ]
     },
