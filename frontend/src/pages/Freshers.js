@@ -54,8 +54,8 @@ const Freshers = () => {
     // checkfunction();
   }, []);
   return (
-    <div className="h-screen container mx-auto bg-white flex flex-col justify-center items-center">
-      <div className=" ">
+    <div className="h-screen container mx-auto bg-white ">
+      <div className="pt-2 mt-5 ">
         <p className="font-serif text-center font-xl">Very Welcome Freshers Batch 2023</p>
         <div className="w-full mx-auto flex  flex-col justify-center items-center p-2 ">
           <img src={HelloImg} alt="helloimghai"/>
