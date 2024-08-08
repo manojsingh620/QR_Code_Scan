@@ -34,11 +34,11 @@ const router = createBrowserRouter([
                 // ]
             },
             {
-                path:"success",
+                path:":id/verify/success",
                 element:<Success/>
             },
             {
-                path:"cancel",
+                path:":id/verify/cancel",
                 element:<Cancel/>
             }
         ]

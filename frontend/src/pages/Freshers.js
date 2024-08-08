@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Succes from "./Success";
 import HelloImg from '../assets/helloparty.jpg'
+import { toast } from "react-toastify";
 
 const Freshers = () => {
   const { id } = useParams();
@@ -18,13 +19,14 @@ const Freshers = () => {
       console.log("idtocheck is =", id);
       const idExists = data.some((item) => item === idToCheck);
       console.log("Does the ID exist in the data array? ", idExists);
-      if (idExists == true) {
+      if (idExists === true) {
         setText("This is valid ticket");
         setVerify(true);
-        navigate("/success");
-        console.log("tut gaya bhaiya main to");
+        navigate("success");
+        toast.success("Be ready for 'UDGAM'!! ")
       } else {
-        // navigate("/cancel")
+        toast.error("Your ticket is invalid")
+        navigate("cancel")
       }
     }
   };
@@ -41,13 +43,9 @@ const Freshers = () => {
       body: JSON.stringify({ id }),
     });
     const dataApi = await dataResponse.json();
+    
     setData(dataApi.data);
-    console.log("dataApi is =", dataApi);
-
-    if (dataApi.data) {
-      console.log("data Api from data is =", dataApi.data);
-      checkfunction();
-    }
+    
   };
 
   useEffect(() => {
@@ -62,8 +60,8 @@ const Freshers = () => {
         </div>
         <div className="flex justify-center items-center">
           <button
-            onClick={Apidatafetch}
-            className="bg-blue-600 px-2 py-1 rounded-full text-white   text-center"
+            onClick={checkfunction}
+            className="bg-blue-600 px-2 py-1 rounded-full text-white  mt-4  text-center"
           >
             verify ticket
           </button>
