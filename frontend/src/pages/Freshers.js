@@ -49,15 +49,15 @@ const Freshers = () => {
   };
 
   useEffect(() => {
-    toast.success("Very Welcome Freshers Batch 2023")
+    toast.success("A Very Welcome Freshers Batch 2023!")
     Apidatafetch();
     // checkfunction();
   }, []);
   return (
     <div className="h-screen container mx-auto bg-white ">
-      <div className="pt-2 mt-10 ">
-        <p className="font-serif text-center font-xl">Very Welcome Freshers Batch 2023</p>
-        <div className="w-full mx-auto flex  flex-col justify-center items-center p-2 ">
+      <div className="pt-16">
+        {/* <p className="font-serif text-center font-xl"></p> */}
+        <div className="w-full mx-auto flex  flex-col justify-center items-center p-2">
           <img src={HelloImg} alt="helloimghai"/>
         </div>
         <div className="flex justify-center items-center">
