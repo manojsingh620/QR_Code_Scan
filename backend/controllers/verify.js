@@ -2,8 +2,8 @@ const Student = require("../models/register");
 
 async function verifyController(req, res) {
   try {
-    const { id } = req.body;
-    console.log("id user QR is = ", id);
+    const { currid } = req.body;
+    console.log("id user QR is = ", currid);
 
     const uniquematchId = await Student.distinct("qrcodeUrldata");
     console.log("students =", uniquematchId);
@@ -13,7 +13,6 @@ async function verifyController(req, res) {
     } else {
       console.log("uniquematchId", uniquematchId);
     }
-
 
     res.json({
       message: "matched successfully",
