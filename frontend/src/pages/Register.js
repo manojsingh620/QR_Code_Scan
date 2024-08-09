@@ -37,6 +37,7 @@ const Register = () => {
 
   const generateqr=()=>{
      setUniqueid({uniqueId : v4()})
+     if(uniqueid.uniqueId){
      
     console.log("uniqueId is thwer ",uniqueid.uniqueId)
     const url = "  https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=";
@@ -44,6 +45,7 @@ const Register = () => {
     setQrcode(originalqrcode)
     handleincriment()
     console.log("url link with id =",originalqrcode)
+  }
   }
 
 

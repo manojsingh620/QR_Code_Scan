@@ -12,12 +12,6 @@ async function registerController(req, res) {
     const userData = await student.save();
 
 
-    // const id = await Student.findById(uniqueId)
-    // console.log("the is this ===",id)
-    // const baseurl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
-    // const qrurl =`${baseurl}http://localhost:3000/${id}/verify`;
-
-
     res.json({
       message : "Saved successfully",
       data : userData

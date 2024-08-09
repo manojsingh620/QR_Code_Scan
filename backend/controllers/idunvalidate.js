@@ -6,15 +6,17 @@ async  function idunvalidate(req,res){
     const {id} = req.body
     console.log("idresult is =",id)
 
-    const payload = {
-         qrcodeUrldata : `${id}+12345678`
-    }
+    const deletedDocument = await Student.findOneAndDelete({ qrcodeUrldata: id });
+    console.log("Deleted document is =", deletedDocument);
+    // const payload = {
+    //      qrcodeUrldata : `${id}+12345678`
+    // }
 
-    const updateid = await Student.findOneAndUpdate({ qrcodeUrldata: id }, payload, { new: true });
-    console.log("updatevalue and id is =",updateid)
+    // const updateid = await Student.findOneAndUpdate({ qrcodeUrldata: id }, payload, { new: true });
+    // console.log("updatevalue and id is =",updateid)
 
     res.json({
-        data : updateid,
+        data : deletedDocument,
         message : "User updated successfuly",
         error : false,
         success : true
